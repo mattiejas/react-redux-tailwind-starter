@@ -15,11 +15,11 @@ Run `npm install` to install all dependencies.
 ### Compiles and hot-reloads for development
 
 Run `npm run dev` to start the development server.
-Use `npm run preview` to preview the production build locally.
 
 ### Compiles and minifies for production
 
 Run `npm run build` to build the project.
+Use `npm run preview` to preview the production build locally.
 
 ### Lints and fixes files
 
