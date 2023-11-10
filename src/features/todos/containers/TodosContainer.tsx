@@ -9,8 +9,6 @@ export default function TodosContainer(): React.JSX.Element {
   const todos = useSelector((state: RootState) => state.todos)
   const dispatch = useDispatch()
 
-  console.log('todos', todos)
-
   const create = (text: string): void => {
     dispatch(
       addTodo({
@@ -20,7 +18,6 @@ export default function TodosContainer(): React.JSX.Element {
   }
 
   const toggle = (id: number): void => {
-    console.log('toggle', id)
     dispatch(toggleTodo(id))
   }
 
