@@ -1,5 +1,6 @@
 import DeleteTodoButton from '@/features/todos/components/delete-todo-button.component.tsx'
 import { type Todo } from '@/features/todos/todos.slice.ts'
+import { Checkbox } from '@/features/ui/components/checkbox.component.tsx'
 import { cn } from '@/lib/utils.ts'
 import type React from 'react'
 
@@ -21,13 +22,8 @@ export default function TodoListItem({
         todo.completed ? 'bg-slate-50 font-bold' : 'bg-slate-100'
       )}
     >
-      <span>
-        <input
-          readOnly
-          checked={todo.completed}
-          type="checkbox"
-          className="mr-2"
-        />
+      <span className="flex items-center gap-x-3">
+        <Checkbox checked={todo.completed} />
         <span className={cn({ 'line-through': todo.completed })}>
           {todo.text}
         </span>

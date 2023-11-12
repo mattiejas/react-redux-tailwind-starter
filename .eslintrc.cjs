@@ -17,5 +17,8 @@ module.exports = {
   ],
   'rules': {
     '@typescript-eslint/space-before-function-paren': 'off',
+    '@typescript-eslint/indent': ['error', 2, {
+      ignoredNodes: ['TSTypeParameterInstantiation']
+    }]
   }
 }

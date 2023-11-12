@@ -18,7 +18,11 @@ export default function TodoList({ todos }: TodosListProps): React.JSX.Element {
       <h2 className="my-3 text-2xl font-bold">Todo List</h2>
       <ul className="flex flex-col gap-2">
         {todos.map((todo) => (
-          <TodoListItem todo={todo} toggleTodo={toggle(todo.id)} />
+          <TodoListItem
+            key={todo.id}
+            todo={todo}
+            toggleTodo={toggle(todo.id)}
+          />
         ))}
       </ul>
 
