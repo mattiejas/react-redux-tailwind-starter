@@ -1,5 +1,5 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import todosReducer from './features/todosSlice'
+import todosReducer from './features/todos/todos.slice.ts'
 import logger from 'redux-logger'
 import {
   FLUSH,

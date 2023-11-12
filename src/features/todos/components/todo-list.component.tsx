@@ -1,11 +1,12 @@
-import { type Todo } from '../../todosSlice.ts'
+import { type Todo } from '../todos.slice.ts'
 import classNames from 'classnames'
 
 export interface TodosListProps {
   todos: Todo[]
   toggleTodo: (id: number) => void
 }
-export default function TodosList({
+
+export default function TodoList({
   todos,
   toggleTodo
 }: TodosListProps): React.JSX.Element {
