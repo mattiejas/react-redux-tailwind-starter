@@ -2,7 +2,7 @@ import type React from 'react'
 import TodoList from '../components/todo-list.component.tsx'
 import { useDispatch, useSelector } from 'react-redux'
 import { addTodo, toggleTodo } from '../todos.slice.ts'
-import { type RootState } from '../../../store.ts'
+import { type RootState } from '@/store.ts'
 import CreateTodoForm from '../components/create-todo-form.component.tsx'
 
 export default function TodosContainer(): React.JSX.Element {

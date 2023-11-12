@@ -1,3 +1,4 @@
+import { Button, Input } from '@/features/ui/components'
 import { useState } from 'react'
 
 export interface CreateTodoFormProps {
@@ -18,9 +19,7 @@ export default function CreateTodoForm({
         setText('')
       }}
     >
-      <input
-        className="flex-1 rounded border border-gray-400 p-2"
-        type="text"
+      <Input
         placeholder="What do you need to do?"
         value={text}
         onChange={(e) => {
@@ -28,12 +27,7 @@ export default function CreateTodoForm({
         }}
       />
 
-      <button
-        className="rounded bg-gray-700 px-4 py-2 font-bold text-white hover:bg-gray-800"
-        type="submit"
-      >
-        Create Todo
-      </button>
+      <Button type="submit">Create Todo</Button>
     </form>
   )
 }

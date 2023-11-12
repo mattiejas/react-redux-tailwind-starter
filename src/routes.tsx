@@ -1,6 +1,6 @@
-import TodoListPage from './pages/todo-list.page.tsx'
-import ErrorPage from './pages/error.page.tsx'
+import ErrorPage from '@/pages/error.page.tsx'
 import { type RouteObject } from 'react-router-dom'
+import TodoListPage from '@/pages/todo-list.page.tsx'
 
 export const routes: RouteObject[] = [
   {

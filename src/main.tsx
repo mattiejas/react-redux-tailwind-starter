@@ -1,10 +1,12 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
 import './index.css'
-import { Provider } from 'react-redux'
+
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import { persistor, store } from './store.ts'
 import { PersistGate } from 'redux-persist/integration/react'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { Provider } from 'react-redux'
+
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 import routes from './routes.tsx'
 
 const router = createBrowserRouter(routes)
