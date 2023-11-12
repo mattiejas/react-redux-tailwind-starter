@@ -1,4 +1,5 @@
 import TodoListItem from '@/features/todos/components/todo-list-item.component.tsx'
+import { useTranslation } from 'react-i18next'
 import { useDispatch } from 'react-redux'
 import { type Todo, toggleTodo } from '../todos.slice.ts'
 
@@ -7,6 +8,7 @@ export interface TodosListProps {
 }
 
 export default function TodoList({ todos }: TodosListProps): React.JSX.Element {
+  const { t } = useTranslation('todos')
   const dispatch = useDispatch()
 
   const toggle = (id: number): (() => void) => {
@@ -28,7 +30,7 @@ export default function TodoList({ todos }: TodosListProps): React.JSX.Element {
 
       {todos.length === 0 && (
         <p className="text-center italic text-gray-500">
-          Create an item to get started.
+          {t('TODO_LIST.EMPTY')}
         </p>
       )}
     </div>

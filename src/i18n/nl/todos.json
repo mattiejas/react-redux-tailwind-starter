@@ -1,0 +1,10 @@
+{
+  "TODO_LIST": {
+    "EMPTY": "Geen todo's gevonden. Voeg er één toe om te beginnen."
+  },
+  "CREATE_TODO": {
+    "PLACEHOLDER": "Wat moet er gebeuren?",
+    "BUTTON": "Toevoegen"
+  }
+}
+

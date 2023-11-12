@@ -1,0 +1,10 @@
+{
+  "TODO_LIST": {
+    "EMPTY": "Add your first todo to get started"
+  },
+  "CREATE_TODO": {
+    "PLACEHOLDER": "What needs to be done?",
+    "BUTTON": "Add"
+  }
+}
+

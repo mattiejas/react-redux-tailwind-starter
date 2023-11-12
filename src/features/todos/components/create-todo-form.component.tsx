@@ -1,9 +1,11 @@
 import { addTodo } from '@/features/todos/todos.slice.ts'
 import { Button, Input } from '@/features/ui/components'
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useDispatch } from 'react-redux'
 
 export default function CreateTodoForm(): React.JSX.Element {
+  const { t } = useTranslation('todos')
   const dispatch = useDispatch()
   const [text, setText] = useState('')
 
@@ -21,14 +23,14 @@ export default function CreateTodoForm(): React.JSX.Element {
       }}
     >
       <Input
-        placeholder="What do you need to do?"
+        placeholder={t('CREATE_TODO.PLACEHOLDER')}
         value={text}
         onChange={(e) => {
           setText(e.target.value)
         }}
       />
 
-      <Button type="submit">Create Todo</Button>
+      <Button type="submit">{t('CREATE_TODO.BUTTON')}</Button>
     </form>
   )
 }
