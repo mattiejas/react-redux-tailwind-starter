@@ -1,13 +1,10 @@
+import { addTodo } from '@/features/todos/todos.slice.ts'
 import { Button, Input } from '@/features/ui/components'
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
 
-export interface CreateTodoFormProps {
-  createTodo: (text: string) => void
-}
-
-export default function CreateTodoForm({
-  createTodo
-}: CreateTodoFormProps): React.JSX.Element {
+export default function CreateTodoForm(): React.JSX.Element {
+  const dispatch = useDispatch()
   const [text, setText] = useState('')
 
   return (
@@ -15,7 +12,11 @@ export default function CreateTodoForm({
       className="flex justify-between gap-3"
       onSubmit={(e) => {
         e.preventDefault()
-        createTodo(text)
+        dispatch(
+          addTodo({
+            text
+          })
+        )
         setText('')
       }}
     >

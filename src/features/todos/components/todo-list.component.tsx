@@ -1,31 +1,24 @@
 import TodoListItem from '@/features/todos/components/todo-list-item.component.tsx'
-import { type Todo } from '../todos.slice.ts'
+import { useDispatch } from 'react-redux'
+import { type Todo, toggleTodo } from '../todos.slice.ts'
 
 export interface TodosListProps {
   todos: Todo[]
-  toggleTodo: (id: number) => void
-  deleteTodo: (id: number) => void
 }
 
-export default function TodoList({
-  todos,
-  toggleTodo,
-  deleteTodo
-}: TodosListProps): React.JSX.Element {
+export default function TodoList({ todos }: TodosListProps): React.JSX.Element {
+  const dispatch = useDispatch()
+
+  const toggle = (id: number): (() => void) => {
+    return () => dispatch(toggleTodo(id))
+  }
+
   return (
     <div>
       <h2 className="my-3 text-2xl font-bold">Todo List</h2>
       <ul className="flex flex-col gap-2">
         {todos.map((todo) => (
-          <TodoListItem
-            todo={todo}
-            toggleTodo={() => {
-              toggleTodo(todo.id)
-            }}
-            deleteTodo={() => {
-              deleteTodo(todo.id)
-            }}
-          />
+          <TodoListItem todo={todo} toggleTodo={toggle(todo.id)} />
         ))}
       </ul>
 

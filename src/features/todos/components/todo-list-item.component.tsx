@@ -1,19 +1,16 @@
+import DeleteTodoButton from '@/features/todos/components/delete-todo-button.component.tsx'
 import { type Todo } from '@/features/todos/todos.slice.ts'
-import { Button } from '@/features/ui/components'
 import { cn } from '@/lib/utils.ts'
 import type React from 'react'
-import { TiDelete } from 'react-icons/ti'
 
 export interface TodoListItemProps {
   todo: Todo
   toggleTodo: () => void
-  deleteTodo: () => void
 }
 
 export default function TodoListItem({
   todo,
-  toggleTodo,
-  deleteTodo
+  toggleTodo
 }: TodoListItemProps): React.JSX.Element {
   return (
     <li
@@ -36,17 +33,7 @@ export default function TodoListItem({
         </span>
       </span>
 
-      <Button
-        onClick={(e) => {
-          e.stopPropagation()
-          deleteTodo()
-        }}
-        size="icon"
-        className="hidden group-hover:flex"
-        variant="ghost"
-      >
-        <TiDelete className="h-6 w-6 text-red-600" />
-      </Button>
+      <DeleteTodoButton id={todo.id} />
     </li>
   )
 }
