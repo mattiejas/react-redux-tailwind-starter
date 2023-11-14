@@ -7,6 +7,7 @@ This is a boilerplate for React projects. It includes:
 - [x] Tailwind CSS
 - [x] Prettier & ESLint (with Standard config)
 - [x] React Router
+- [x] react-i18next
 
 ## Project setup
 
