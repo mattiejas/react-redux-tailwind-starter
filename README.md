@@ -6,7 +6,7 @@ This is a boilerplate for React projects. It includes:
 - [x] Redux Toolkit
 - [x] Tailwind CSS
 - [x] Prettier & ESLint (with Standard config)
-- [ ] React Router
+- [x] React Router
 
 ## Project setup
 
